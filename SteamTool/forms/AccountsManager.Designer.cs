@@ -141,14 +141,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 397);
+            this.ClientSize = new System.Drawing.Size(319, 412);
             this.Controls.Add(this.bt_accountswitch);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AccountsManager";
+            this.ShowIcon = false;
             this.Text = "帐号管理";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccountsManager_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

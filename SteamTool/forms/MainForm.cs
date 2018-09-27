@@ -32,12 +32,15 @@ namespace SteamTool
 
         private void bt_accountmanager_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             AccountsManager am =  new AccountsManager(this);
             am.ShowDialog();
+            
         }
 
         private void bt_configmanager_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             ConfigManager cm = new ConfigManager(this);
             cm.ShowDialog();
         }

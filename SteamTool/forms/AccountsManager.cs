@@ -71,13 +71,22 @@ namespace SteamTool
         }
 
         private void bt_accountswitch_Click(object sender, EventArgs e)
-        { 
+        {
+            if (listBox_account.SelectedIndex == -1)
+            {
+                MessageBox.Show("请选择一个账号!");
+            }
             RegistryKey key = Registry.CurrentUser;
             RegistryKey user = key.OpenSubKey(@"SOFTWARE\\Valve\\Steam", true);
             string username = listBox_account.SelectedItem.ToString();
             Console.WriteLine(username);
             user.SetValue("AutoLoginUser", username);
             MessageBox.Show("切换成功，重启Steam即可");
+        }
+
+        private void AccountsManager_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.mainForm.Visible = true;
         }
     }
 }

@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigManager));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_src = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox_dst = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button_configcp = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox_gameid = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button_configcp = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,6 +83,15 @@
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // comboBox_dst
+            // 
+            this.comboBox_dst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_dst.FormattingEnabled = true;
+            this.comboBox_dst.Location = new System.Drawing.Point(122, 35);
+            this.comboBox_dst.Name = "comboBox_dst";
+            this.comboBox_dst.Size = new System.Drawing.Size(245, 20);
+            this.comboBox_dst.TabIndex = 2;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -91,15 +101,6 @@
             this.label2.Size = new System.Drawing.Size(91, 14);
             this.label2.TabIndex = 2;
             this.label2.Text = "目标置文件：";
-            // 
-            // comboBox_dst
-            // 
-            this.comboBox_dst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_dst.FormattingEnabled = true;
-            this.comboBox_dst.Location = new System.Drawing.Point(122, 35);
-            this.comboBox_dst.Name = "comboBox_dst";
-            this.comboBox_dst.Size = new System.Drawing.Size(245, 20);
-            this.comboBox_dst.TabIndex = 2;
             // 
             // panel3
             // 
@@ -112,15 +113,13 @@
             this.panel3.TabIndex = 4;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // button_configcp
+            // textBox_gameid
             // 
-            this.button_configcp.Location = new System.Drawing.Point(18, 123);
-            this.button_configcp.Name = "button_configcp";
-            this.button_configcp.Size = new System.Drawing.Size(72, 23);
-            this.button_configcp.TabIndex = 1;
-            this.button_configcp.Text = "覆盖";
-            this.button_configcp.UseVisualStyleBackColor = true;
-            this.button_configcp.Click += new System.EventHandler(this.button_configcp_Click);
+            this.textBox_gameid.Location = new System.Drawing.Point(18, 70);
+            this.textBox_gameid.Name = "textBox_gameid";
+            this.textBox_gameid.Size = new System.Drawing.Size(72, 21);
+            this.textBox_gameid.TabIndex = 3;
+            this.textBox_gameid.Text = "730";
             // 
             // label3
             // 
@@ -132,13 +131,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "游戏ID";
             // 
-            // textBox_gameid
+            // button_configcp
             // 
-            this.textBox_gameid.Location = new System.Drawing.Point(18, 70);
-            this.textBox_gameid.Name = "textBox_gameid";
-            this.textBox_gameid.Size = new System.Drawing.Size(72, 21);
-            this.textBox_gameid.TabIndex = 3;
-            this.textBox_gameid.Text = "730";
+            this.button_configcp.Location = new System.Drawing.Point(18, 123);
+            this.button_configcp.Name = "button_configcp";
+            this.button_configcp.Size = new System.Drawing.Size(72, 23);
+            this.button_configcp.TabIndex = 1;
+            this.button_configcp.Text = "覆盖";
+            this.button_configcp.UseVisualStyleBackColor = true;
+            this.button_configcp.Click += new System.EventHandler(this.button_configcp_Click);
             // 
             // ConfigManager
             // 
@@ -148,8 +149,11 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConfigManager";
-            this.Text = "ConfigManager";
+            this.ShowIcon = false;
+            this.Text = "配置文件";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ConfigManager_FormClosed);
             this.Load += new System.EventHandler(this.ConfigManager_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

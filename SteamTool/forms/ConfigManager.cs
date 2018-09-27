@@ -120,5 +120,10 @@ namespace SteamTool
         {
             mainForm.panel_Paint(e);
         }
+
+        private void ConfigManager_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.mainForm.Visible = true;
+        }
     }
 }
