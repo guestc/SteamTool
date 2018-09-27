@@ -20,6 +20,8 @@ namespace SteamTool
         public MainForm()
         {
             InitializeComponent();
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.Text = "SteamTool";
         }
         public void panel_Paint(PaintEventArgs ev)
         {
@@ -62,6 +64,35 @@ namespace SteamTool
                 if (path == null) { jc.set("steampath", SteamPath); }
                 SteamPath = path;
             } while (SteamPath == null);
+        }
+
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            string selected = e.ClickedItem.Text;
+            switch (selected)
+            {
+
+                case "显示":
+                    this.Visible = true;
+                    break;
+
+
+                case "隐藏":
+                    this.Visible = false;
+                    break;
+
+
+                case "退出":
+                    Application.ExitThread();
+                    break;
+
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing) e.Cancel = true;
+            this.Visible = false;
         }
     }
 }

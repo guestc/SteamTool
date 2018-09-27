@@ -22,29 +22,6 @@ namespace SteamTool
             mainForm = mf;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Vdf v = new Vdf(mainForm.SteamPath+"\\config\\loginusers.vdf");
-            Dictionary<string, SteamUserInfo> data = v.get();
-            int index = 0;
-            foreach (SteamUserInfo user in data.Values) {
-                listBox_account.Items.Insert(index,user.user);
-                listBox_steamname.Items.Insert(index, user.name);
-                index++;
-            }
-            MessageBox.Show("加载完毕!");
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
             mainForm.panel_Paint(e);
@@ -87,6 +64,19 @@ namespace SteamTool
         private void AccountsManager_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.mainForm.Visible = true;
+        }
+
+        private void AccountsManager_Load(object sender, EventArgs e)
+        {
+            Vdf v = new Vdf(mainForm.SteamPath + "\\config\\loginusers.vdf");
+            Dictionary<string, SteamUserInfo> data = v.get();
+            int index = 0;
+            foreach (SteamUserInfo user in data.Values)
+            {
+                listBox_account.Items.Insert(index, user.user);
+                listBox_steamname.Items.Insert(index, user.name);
+                index++;
+            }
         }
     }
 }

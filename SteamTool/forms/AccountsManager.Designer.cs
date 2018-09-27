@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox_account = new System.Windows.Forms.ListBox();
@@ -37,29 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bt_accountswitch = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(51, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 24);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "获取所有帐号";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(40, 21);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(210, 78);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -67,7 +45,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.listBox_account);
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(12, 122);
+            this.panel2.Location = new System.Drawing.Point(17, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(105, 203);
             this.panel2.TabIndex = 2;
@@ -82,7 +60,6 @@
             this.label1.Size = new System.Drawing.Size(56, 14);
             this.label1.TabIndex = 2;
             this.label1.Text = "Account";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // listBox_account
             // 
@@ -92,7 +69,6 @@
             this.listBox_account.Name = "listBox_account";
             this.listBox_account.Size = new System.Drawing.Size(105, 172);
             this.listBox_account.TabIndex = 0;
-            this.listBox_account.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.listBox_account.SelectedValueChanged += new System.EventHandler(this.listBox_account_SelectedValueChanged);
             // 
             // listBox_steamname
@@ -121,7 +97,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.listBox_steamname);
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(117, 122);
+            this.panel3.Location = new System.Drawing.Point(123, 31);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(161, 203);
             this.panel3.TabIndex = 3;
@@ -129,7 +105,7 @@
             // 
             // bt_accountswitch
             // 
-            this.bt_accountswitch.Location = new System.Drawing.Point(12, 347);
+            this.bt_accountswitch.Location = new System.Drawing.Point(17, 264);
             this.bt_accountswitch.Name = "bt_accountswitch";
             this.bt_accountswitch.Size = new System.Drawing.Size(266, 23);
             this.bt_accountswitch.TabIndex = 4;
@@ -141,16 +117,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 412);
+            this.ClientSize = new System.Drawing.Size(314, 345);
             this.Controls.Add(this.bt_accountswitch);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "AccountsManager";
             this.ShowIcon = false;
             this.Text = "帐号管理";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccountsManager_FormClosed);
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.AccountsManager_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -160,9 +135,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox listBox_steamname;
         private System.Windows.Forms.Label label2;
